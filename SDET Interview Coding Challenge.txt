@@ -1,0 +1,67 @@
+﻿Interview Coding Problem
+Neovest August 2017
+
+Frogs and Toads 
+You may use your IDE and internet to help solve this problem. Email the final compile-able code to pmcdonald@neovest.com within the requested time frame (refer to the cover letter). Please note in your comments which programming language was used and the resources that you used to solve the problem. You may solve the problem in Java or C#.
+
+The game is called “Frogs and Toads”. Player A thinks of a 4 digit ‘Hidden’ number. Player B must guess the number based upon hints from Player A. 
+
+The hints are encoded as ‘Frogs’ and ‘Toads’. The number of Frogs in a hint indicates how many digits in the guess match the Hidden number in both digit and position. The number of Toads in the hint shows the number of digits in the guess that match the Hidden number but is located in the wrong position. 
+
+For example:
+Hidden number: "4185"
+Player B guess: "5481"
+Hint: 1 Frog and 3 Toads. (The Frog is 8; the Toads are 4, 1, and 5)
+
+Next Guess: “4583”
+Hint:  2 Frogs and 1 Toad (The Frogs are 4 and 8; the Toad is 5)
+
+Next Guess “5555”
+Hint: 1 Frog and 0 Toads (The Frog is the last 5)
+
+Player B continues to guess until they discover the Hidden number.
+
+Frogs are not Toads so, so if a number is a Frog (correct digit in the correct location) then that digit does not need to be checked for Toad-worthiness.
+
+Write a method or function named getHint(String hiddenStr, String guessStr)  that receives two parameters: the first parameter is a String that contains the Hidden number and the second parameter contains a guess String. The method should return a String “Hint”. The Hint indicates the number of Frogs and Toads according to the above rules. Use ‘F’ to indicate the Frogs and ‘T’ to indicate the Toads. Here are sample test cases and their expected results:
+
+getHint(“1807”,”7810”);
+	Returned Hint: “1F3T”
+getHint(“1807”,”2805”);
+	Returned  Hint: “2F0T”
+getHint(“1807”,”9807”);
+	Returned Hint: “3F0T”
+getHint(“1807”,”1807”);
+	Returned Hint: “4F0T”
+Use this code stub to input your Hidden Number and your guesses. Write only the method needed to determine the hint and make sure that getHint returns that hint string. You may use your own IDE and the internet to help solve the problem. Be sure to test your code and include your test cases in your code solution.  We strongly encourage applicants to return their solutions within 24 hours to pmcdonald@neovest.com.
+
+import java.util.Scanner;
+
+public class NeoCodingChallenge {
+
+	public static void main(String[] args) {
+		// Simple input from console
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Input a hidden number: ");
+		String hiddenStr = scan.next();
+		System.out.print("Input a guess:");
+		String guessStr = scan.next();
+		String hintValue = getHint(hiddenStr,guessStr);
+		System.out.println("Guess: " + guessStr + " Hint: " + hintValue);
+		passed(1,hintValue,”1F2T”);    // use expected values that make sense
+		scan.close();
+	}
+
+	static void passed(int testCaseNumber, String results, String expected){
+		// use this method to test your code
+          	System.out.println("Case " + testCaseNumber + " Passed = " + results.equals(expected));
+     	}
+		
+	static String getHint(String hiddenStr, String guessStr){
+		String retHint = "";
+		
+		//TO DO - Place your code here
+		
+		return (retHint);
+		}
+}
