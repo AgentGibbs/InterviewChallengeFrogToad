@@ -1,0 +1,12 @@
+
+Get 2 strings
+First is correct target, second is guess
+
+
+//Break strings into char arrays
+
+for each char c in target
+{if (guess.contains c)
+  {compare the two array members at the current index. If they match, increment Frog, else increment Toad}
+  
+ }
